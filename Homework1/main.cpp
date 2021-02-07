@@ -30,6 +30,11 @@ void search(std::vector<std::string>& sentences, std::string& word, std::vector<
         bool has_word = 0;
         while((pos = temp_sentence.find(word, pos)) != std::string::npos)
         {
+            if(pos && temp_sentence[pos-1] != ' ' || temp_sentence[pos+word.size()] != ' ' && temp_sentence[pos+word.size()] != '.')
+            {
+                ++pos;
+                continue;
+            }
             has_word = 1;
             for(int i = pos; temp_sentence[i] != ' ' && temp_sentence[i] != '.'; ++i)
                 temp_sentence[i] = toupper(temp_sentence[i]);
