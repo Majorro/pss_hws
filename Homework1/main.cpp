@@ -28,15 +28,17 @@ void search(std::vector<std::string>& sentences, std::string& word, std::vector<
         std::string temp_sentence = sentence;
         int pos = 0;
         bool has_word = 0;
-        while((pos = temp_sentence.find(word, pos)) != std::string::npos)
+        while((pos = temp_sentence.find(word, pos)) != std::string::npos) //method find returns std::string::npos when substring is not found
         {
-            if(pos && temp_sentence[pos-1] != ' ' || temp_sentence[pos+word.size()] != ' ' && temp_sentence[pos+word.size()] != '.')
+            if(pos && temp_sentence[pos-1] != ' ' ||
+               temp_sentence[pos+word.size()] != ' ' &&
+               temp_sentence[pos+word.size()] != '.') //checking that word is not substring of other word
             {
                 ++pos;
                 continue;
             }
             has_word = 1;
-            for(int i = pos; temp_sentence[i] != ' ' && temp_sentence[i] != '.'; ++i)
+            for(int i = pos; temp_sentence[i] != ' ' && temp_sentence[i] != '.'; ++i) //uppercasing found word
                 temp_sentence[i] = toupper(temp_sentence[i]);
         }
         if(has_word)
