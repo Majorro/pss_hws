@@ -1,4 +1,4 @@
-# pss_hws
+# Programming Software Systems course homeworks
 
 All HWs are written in **C++14**, compiler - **g++8.1.0**
 
