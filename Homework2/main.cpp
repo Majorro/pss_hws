@@ -10,7 +10,7 @@
 int main()
 {
 #ifdef DEBUG
-    freopen("out.txt", "w", stdout);
+    freopen("Homework2/out.txt", "w", stdout);
 #endif
     
     Admin a = Admin("adad", "asd", 123);
