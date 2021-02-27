@@ -1,9 +1,16 @@
 #ifndef USER
 #define USER
 
+#include<iostream>
+#include<set>
+#include<string>
+#include<unistd.h>
+#include<algorithm>
+#include"../Utils/AccessLevel.cpp"
+#include"../Utils/Utils.cpp"
+#include"../Abstracts/Room.cpp"
+
 class Admin;
-
-
 
 class User
 {
@@ -15,10 +22,10 @@ private:
     std::string name, surname;
     int age;
     std::set<Room> privileges; // specific rooms which can be opened by exact user
-    void FormatName(std::string& name)
+    void FormatName(std::string& name) // name is one's name) converts to Udddd
     {
         if(name.empty())
-            throw std::invalid_argument("Empty argument was given");
+            throw std::invalid_argument("Argument cannot be empty");
         name[0] = std::toupper(name[0]);
         std::transform(name.begin()+1, name.end(), name.begin()+1, [](char c){ return std::tolower(c); });
     }
@@ -29,15 +36,20 @@ public:
         if(age<0||age>150)
             throw std::invalid_argument("Wrong age was given to user");
         if(name.empty() || surname.empty())
-            throw std::invalid_argument("Empty name or surname was given");
-
+            throw std::invalid_argument("Name and surname cannot be empty");
+        for(auto c : name)
+            if(!isalpha(c))
+                std::invalid_argument("Name should contain only letters");
+        for(auto c : surname)
+            if(!isalpha(c))
+                std::invalid_argument("Surname should contain only letters");                
         FormatName(name); FormatName(surname);
         this->name = name;
         this->surname = surname;
         this->age = age;
         
         this->accessLevel = GreenAccess;
-        std::cout << this->ToString()+" was added\n";
+        std::cout << this->ToString()+" was added\n"+std::string(80,'-')+"\n";
     }
 
     // GETTERS SETTERS
@@ -64,35 +76,32 @@ public:
     // END GETTERS SETTERS
 
     // ADMIN INTERACTION COSTYLS
-    void SetAccessLevel(Admin& admin, AccessLevel accessLevel)
+    void SetAccessLevel(Admin& admin, AccessLevel accessLevel) // admin object parameter like "key", which lets change this user's access level
     {
-        std::cout << this->name+" "+this->surname+"'s access level was successfully changed from " <<
-                  this->accessLevel << " to " << accessLevel << '\n';
+        std::cout << this->name+" "+this->surname+"'s access level has successfully changed from " <<
+                  this->accessLevel << " to " << accessLevel << "\n"+std::string(80,'-')+"\n";
         this->accessLevel = accessLevel;
     }
     void AddPrivilege(Admin& admin, Room& room)
     {
         privileges.insert(room);
-        std::cout << this->ToString()+" got privelege on room №" << room.GetRoomNumber() << '\n'; //got or has got?
+        std::cout << this->ToString()+" has gotten privilege on room #" << room.GetRoomNumber() << "\n"+std::string(80,'-')+"\n"; //got or has gotten?
     }
     void TakePrivilege(Admin& admin, Room& room)
     {
-        try
+        if(privileges.erase(room))
+            std::cout << this->ToString()+" has lost privilege on room #" << room.GetRoomNumber() << "\n"+std::string(80,'-')+"\n";
+        else
         {
-            privileges.erase(room);
-            std::cout << this->ToString()+" lost privelege on room №" << room.GetRoomNumber() << '\n';
-        }
-        catch(...)
-        {
-            std::cout << this->ToString()+" has no privelege on room №" << room.GetRoomNumber() << '\n'
-                      << "Nothing changed\n";
+            std::cout << this->ToString()+" has no privilege on room #" << room.GetRoomNumber() << '\n'
+                      << "Nothing has changed\n"+std::string(80,'-')+"\n";
         }
     }
     // END ADMIN INTERACTION COSTYLS
 
     bool HasAccessToRoom(Room& room){ return this->accessLevel >= room.GetRequiredAccessLevel(); }
 
-    bool RequestAccessToRoom(Room& room)
+    bool RequestAccessToRoom(Room& room) 
     {
         std::cout << this->ToString()+" is trying to open "+room.ToString() << '\n';
         for(int i = 0; i < 3; ++i) // illusion of working
@@ -103,13 +112,19 @@ public:
         std::cout << '\n';
         if(this->HasAccessToRoom(room))
         {
-            std::cout << "Room successfully opened!\n";
+            std::cout << "Room has successfully opened!\n"+std::string(80,'-')+"\n";
+            return 1;
+        }
+        else if(this->privileges.find(room) != this->privileges.end())
+        {
+            std::cout << this->ToString()+" has privilege on this room\n";
+            std::cout << "Room has successfully opened!\n"+std::string(80,'-')+"\n";
             return 1;
         }
         else
         {
-            std::cout << "Room is still closed, required access level is"
-                      << room.GetRequiredAccessLevel() << '\n';
+            std::cout << "Room is still closed, required access level is "
+                      << room.GetRequiredAccessLevel() << "\n"+std::string(80,'-')+"\n";
             return 0;
         }
     }
@@ -130,11 +145,5 @@ public:
         return 0;
     }
 };
-
-#include"../Users/Admin.cpp"
-#include"../Users/Director.cpp"
-#include"../Users/LabEmployee.cpp"
-#include"../Users/Professor.cpp"
-#include"../Users/Student.cpp"
 
 #endif /* USER */

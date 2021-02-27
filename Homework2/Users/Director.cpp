@@ -1,11 +1,16 @@
 #ifndef DIRECTOR
 #define DIRECTOR
 
+#include<string>
+#include<iostream>
+#include"../Abstracts/User.cpp"
+
 class Director : public User // TODO: think how to make more bug-secure
 {
 private:
     void IamAbstract() override {}; //legendary costyl
     static bool isCreated;
+
 public:
 
     Director(std::string name, std::string surname, int age)
@@ -20,10 +25,7 @@ public:
         }
     }
 
-    // GETTERS SETTERS
-    // END GETTERS SETTERS
-
-    bool IsAdded()
+    static bool IsAdded()
     {
         return Director::isCreated;
     }

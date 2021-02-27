@@ -31,4 +31,5 @@ std::ostream &operator<<(std::ostream &out, const AccessLevel accessLevel)
     }
     return out;
 }
+
 #endif /* ACCESS_LEVEL */

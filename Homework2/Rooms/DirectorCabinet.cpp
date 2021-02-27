@@ -1,11 +1,15 @@
 #ifndef DIRECTOR_CABINET
 #define DIRECTOR_CABINET
 
-class DirectorCabinet : public Room // TODO: add restrictions on creating(pseudo-singleton)
+#include<iostream>
+#include"../Abstracts/Room.cpp"
+
+class DirectorCabinet : public Room
 {
 private:
     void IamAbstract() override {}; //legendary costyl
     static bool isCreated;
+
 public:
     DirectorCabinet(int roomFloor)
     : Room(roomFloor)
@@ -19,14 +23,12 @@ public:
         }
     }
 
-    // GETTERS SETTERS
-    // END GETTERS SETTERS
-
-    bool IsAdded()
+    static bool IsAdded()
     {
-        return DirectorCabinet::isCreated;
+        return isCreated;
     }
 };
+
 bool DirectorCabinet::isCreated = 0;
 
 #endif /* DIRECTOR_CABINET */

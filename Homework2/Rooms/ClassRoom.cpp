@@ -1,6 +1,8 @@
 #ifndef CLASS_ROOM
 #define CLASS_ROOM
 
+#include"../Abstracts/Room.cpp"
+
 class ClassRoom : public Room
 {
 private:
@@ -12,5 +14,4 @@ public:
         this->requiredAccessLevel = YellowAccess;
     }
 };
-
 #endif /* CLASS_ROOM */

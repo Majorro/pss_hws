@@ -1,6 +1,8 @@
 #ifndef CABINET
 #define CABINET
 
+#include"../Abstracts/Room.cpp"
+
 class Cabinet : public Room
 {
 private:
@@ -13,5 +15,4 @@ public:
         this->requiredAccessLevel = RedAccess;
     }
 };
-
 #endif /* CABINET */

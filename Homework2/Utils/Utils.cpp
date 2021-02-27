@@ -1,10 +1,13 @@
 #ifndef UTILS
 #define UTILS
 
+#include<string>
+#include<algorithm>
+
 class Utils
 {
 public:
-    static std::string TypeNameToHumanString(std::string typeIdName) // typeid(type).name()
+    static std::string TypeNameToHumanString(std::string typeIdName) // parameter should be typeid(<type>).name()
     {
         std::string tempTypeName = typeIdName;
         auto it = std::find_if(tempTypeName.begin(), tempTypeName.end(), [](char c){ return isalpha(c); });
