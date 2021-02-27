@@ -1,45 +1,63 @@
 #ifndef USER
 #define USER
 
-#include<string>
-#include<set>
-
 class Admin;
+
+
 
 class User
 {
 protected:
     AccessLevel accessLevel;
+    virtual void IamAbstract()=0;
+    
 private:
-    std::string name, surname; // TODO: add checkers and formatters
+    std::string name, surname;
     int age;
     std::set<Room> privileges; // specific rooms which can be opened by exact user
-public:
-    User(std::string name, std::string surname, int age) // in children constructors requiredAccessLevel should be initialized
+    void FormatName(std::string& name)
     {
+        if(name.empty())
+            throw std::invalid_argument("Empty argument was given");
+        name[0] = std::toupper(name[0]);
+        std::transform(name.begin()+1, name.end(), name.begin()+1, [](char c){ return std::tolower(c); });
+    }
+
+public:
+    User(std::string name, std::string surname, int age) // accessLevel should be initialized in children constructors 
+    {
+        if(age<0||age>150)
+            throw std::invalid_argument("Wrong age was given to user");
+        if(name.empty() || surname.empty())
+            throw std::invalid_argument("Empty name or surname was given");
+
+        FormatName(name); FormatName(surname);
         this->name = name;
         this->surname = surname;
         this->age = age;
+        
+        this->accessLevel = GreenAccess;
+        std::cout << this->ToString()+" was added\n";
     }
 
     // GETTERS SETTERS
-    virtual std::string GetName()
+    std::string GetName()
     {
         return name;
     }
-    virtual std::string GetSurname()
+    std::string GetSurname()
     {
         return surname;
     }
-    virtual int GetAge()
+    int GetAge()
     {
         return age;
     }
-    virtual AccessLevel GetAccessLevel()
+    AccessLevel GetAccessLevel()
     {
         return accessLevel;
     }
-    virtual std::set<Room> GetPrivileges()
+    std::set<Room> GetPrivileges()
     {
         return privileges;
     }
@@ -48,21 +66,25 @@ public:
     // ADMIN INTERACTION COSTYLS
     void SetAccessLevel(Admin& admin, AccessLevel accessLevel)
     {
+        std::cout << this->name+" "+this->surname+"'s access level was successfully changed from " <<
+                  this->accessLevel << " to " << accessLevel << '\n';
         this->accessLevel = accessLevel;
     }
-    void AddPrivilege(Admin& admin, Room room)
+    void AddPrivilege(Admin& admin, Room& room)
     {
         privileges.insert(room);
+        std::cout << this->ToString()+" got privelege on room №" << room.GetRoomNumber() << '\n'; //got or has got?
     }
-    void TakePrivilege(Admin& admin, Room room)
+    void TakePrivilege(Admin& admin, Room& room)
     {
         try
         {
             privileges.erase(room);
+            std::cout << this->ToString()+" lost privelege on room №" << room.GetRoomNumber() << '\n';
         }
         catch(...)
         {
-            std::cout << "User "+this->name+" "+this->surname+" has no privelege on room №" << room.GetRoomNumber() << '\n'
+            std::cout << this->ToString()+" has no privelege on room №" << room.GetRoomNumber() << '\n'
                       << "Nothing changed\n";
         }
     }
@@ -70,8 +92,15 @@ public:
 
     bool HasAccessToRoom(Room& room){ return this->accessLevel >= room.GetRequiredAccessLevel(); }
 
-    bool requestAccessToRoom(Room& room)
+    bool RequestAccessToRoom(Room& room)
     {
+        std::cout << this->ToString()+" is trying to open "+room.ToString() << '\n';
+        for(int i = 0; i < 3; ++i) // illusion of working
+        {
+            std::cout << ".";
+            sleep(1);
+        }
+        std::cout << '\n';
         if(this->HasAccessToRoom(room))
         {
             std::cout << "Room successfully opened!\n";
@@ -85,9 +114,15 @@ public:
         }
     }
 
-    bool HasPrivilege(Room room)
+    bool HasPrivilege(Room& room)
     {
         return privileges.find(room) != privileges.end();
+    }
+
+    std::string ToString()
+    {
+        std::string typeName = Utils::TypeNameToHumanString(typeid(*this).name());
+        return typeName+" "+this->name+" "+this->surname;
     }
 
     virtual bool IsAdmin()
@@ -97,9 +132,9 @@ public:
 };
 
 #include"../Users/Admin.cpp"
-// #include"../Users/Director.cpp"
-// #include"../Users/LabEmployee.cpp"
-// #include"../Users/Professor.cpp"
-// #include"../Users/Student.cpp"
+#include"../Users/Director.cpp"
+#include"../Users/LabEmployee.cpp"
+#include"../Users/Professor.cpp"
+#include"../Users/Student.cpp"
 
 #endif /* USER */

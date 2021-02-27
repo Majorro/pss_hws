@@ -1,14 +1,13 @@
 #ifndef ADMIN
 #define ADMIN
 
-#include<iostream>
-#include<string>
-
-#include"../Abstracts/Room.cpp"
-#include"../Abstracts/User.cpp"
+// #include"../Abstracts/Room.cpp"
+// #include"../Abstracts/User.cpp"
 
 class Admin : public User
 {
+private:
+    void IamAbstract() override {}; //legendary costyl
 public:
     Admin(std::string name, std::string surname, int age)
     : User(name, surname, age)
@@ -25,12 +24,12 @@ public:
         user.SetAccessLevel(*this, accessLevel);
     }
 
-    void AddPrivilegeToUser(User& user, Room room)
+    void AddPrivilegeToUser(User& user, Room& room)
     {
         user.AddPrivilege(*this, room);
     }
 
-    void TakePrivilegeFromUser(User& user, Room room)
+    void TakePrivilegeFromUser(User& user, Room& room)
     {
         user.TakePrivilege(*this, room);
     }

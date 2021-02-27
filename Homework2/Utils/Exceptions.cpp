@@ -1,7 +1,7 @@
 #ifndef EXCEPTIONS
 #define EXCEPTIONS
 
-struct wrong_access_exception
+struct exception
 {
     const char* text = "";
     const char * what () const throw ()
