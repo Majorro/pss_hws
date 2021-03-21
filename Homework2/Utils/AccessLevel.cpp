@@ -5,6 +5,7 @@
 
 enum AccessLevel
 {
+    BlueAccess,
     GreenAccess,
     YellowAccess,
     RedAccess,
@@ -16,6 +17,9 @@ std::ostream &operator<<(std::ostream &out, const AccessLevel accessLevel)
 {
     switch (accessLevel)
     {
+        case BlueAccess:
+            out << "Blue";
+            break;
         case GreenAccess:
             out << "Green";
             break;
