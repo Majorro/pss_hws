@@ -12,7 +12,10 @@ public:
     ConferenceRoom(int roomFloor)
     : Room(roomFloor)
     {
-        this->requiredAccessLevel = GreenAccess;
+        if(roomFloor == 1)
+            this->requiredAccessLevel = BlueAccess;
+        else
+            this->requiredAccessLevel = GreenAccess;
     }
 };
 

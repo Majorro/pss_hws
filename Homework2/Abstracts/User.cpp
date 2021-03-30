@@ -103,6 +103,7 @@ public:
 
     bool RequestAccessToRoom(Room& room) 
     {
+        bool isOpened;
         std::cout << this->ToString()+" is trying to open "+room.ToString() << '\n';
         for(int i = 0; i < 3; ++i) // illusion of working
         {
@@ -110,23 +111,30 @@ public:
             sleep(1);
         }
         std::cout << '\n';
-        if(this->HasAccessToRoom(room))
+        if(Room::isEmergency)
         {
-            std::cout << "Room has successfully opened!\n"+std::string(80,'-')+"\n";
-            return 1;
+            std::cout << "Emergency! Room has opened!";
+            isOpened = 1;
+        }
+        else if(this->HasAccessToRoom(room))
+        {
+            std::cout << "Room has successfully opened!";
+            isOpened = 1;
         }
         else if(this->privileges.find(room) != this->privileges.end())
         {
             std::cout << this->ToString()+" has privilege on this room\n";
-            std::cout << "Room has successfully opened!\n"+std::string(80,'-')+"\n";
-            return 1;
+            std::cout << "Room has successfully opened!";
+            isOpened = 1;
         }
         else
         {
             std::cout << "Room is still closed, required access level is "
-                      << room.GetRequiredAccessLevel() << "\n"+std::string(80,'-')+"\n";
-            return 0;
+                      << room.GetRequiredAccessLevel();
+            isOpened = 0;
         }
+        std::cout << "\n"+std::string(80,'-')+"\n";
+        return isOpened;
     }
 
     bool HasPrivilege(Room& room)

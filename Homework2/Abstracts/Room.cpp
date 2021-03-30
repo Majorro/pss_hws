@@ -20,6 +20,8 @@ private:
     int roomFullNumber, roomNumber, roomFloor;
     
 public:
+    static bool isEmergency;
+
     Room(int roomFloor) // requiredAccessLevel should be initialized in children constructors
     {
         if(roomFloor < lowestFloor || roomFloor > highestFloor)
@@ -28,7 +30,7 @@ public:
         this->roomNumber = RoomNumberGenerator::GetNextRoomOnFloor(roomFloor);
         this->roomFullNumber = this->roomFloor*RoomNumberGenerator::maxRoomsOnFloor+ // typical formula for room numbering
                                this->roomNumber;
-        this->requiredAccessLevel = GreenAccess;
+        this->requiredAccessLevel = BlueAccess;
         std::cout << this->ToString() << " has built\n"+std::string(80,'-')+"\n";
     }
 
@@ -52,5 +54,7 @@ public:
 inline bool operator==(const Room& lhs, const Room& rhs){ return lhs.GetRoomNumber() == rhs.GetRoomNumber(); }
 inline bool operator!=(const Room& lhs, const Room& rhs){ return !operator==(lhs,rhs);}
 inline bool operator< (const Room& lhs, const Room& rhs){ return lhs.GetRoomNumber() < rhs.GetRoomNumber(); }
+
+bool Room::isEmergency = 0;
 
 #endif /* ROOM */

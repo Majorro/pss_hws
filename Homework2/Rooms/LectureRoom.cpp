@@ -12,7 +12,7 @@ public:
     LectureRoom(int roomFloor)
     : Room(roomFloor)
     {
-        this->requiredAccessLevel = YellowAccess;
+        this->requiredAccessLevel = BlueAccess;
     }
 };
 
