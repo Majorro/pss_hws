@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "H:/repos/pss_hws/Homework4/build/_deps/sqliteorm-subbuild/CMakeFiles/sqliteorm-populate"
+		},
+		{
+			"file" : "H:/repos/pss_hws/Homework4/build/_deps/sqliteorm-subbuild/CMakeFiles/sqliteorm-populate.rule"
+		},
+		{
+			"file" : "H:/repos/pss_hws/Homework4/build/_deps/sqliteorm-subbuild/CMakeFiles/sqliteorm-populate-complete.rule"
+		},
+		{
+			"file" : "H:/repos/pss_hws/Homework4/build/_deps/sqliteorm-subbuild/sqliteorm-populate-prefix/src/sqliteorm-populate-stamp/sqliteorm-populate-build.rule"
+		},
+		{
+			"file" : "H:/repos/pss_hws/Homework4/build/_deps/sqliteorm-subbuild/sqliteorm-populate-prefix/src/sqliteorm-populate-stamp/sqliteorm-populate-configure.rule"
+		},
+		{
+			"file" : "H:/repos/pss_hws/Homework4/build/_deps/sqliteorm-subbuild/sqliteorm-populate-prefix/src/sqliteorm-populate-stamp/sqliteorm-populate-download.rule"
+		},
+		{
+			"file" : "H:/repos/pss_hws/Homework4/build/_deps/sqliteorm-subbuild/sqliteorm-populate-prefix/src/sqliteorm-populate-stamp/sqliteorm-populate-install.rule"
+		},
+		{
+			"file" : "H:/repos/pss_hws/Homework4/build/_deps/sqliteorm-subbuild/sqliteorm-populate-prefix/src/sqliteorm-populate-stamp/sqliteorm-populate-mkdir.rule"
+		},
+		{
+			"file" : "H:/repos/pss_hws/Homework4/build/_deps/sqliteorm-subbuild/sqliteorm-populate-prefix/src/sqliteorm-populate-stamp/sqliteorm-populate-patch.rule"
+		},
+		{
+			"file" : "H:/repos/pss_hws/Homework4/build/_deps/sqliteorm-subbuild/sqliteorm-populate-prefix/src/sqliteorm-populate-stamp/sqliteorm-populate-test.rule"
+		},
+		{
+			"file" : "H:/repos/pss_hws/Homework4/build/_deps/sqliteorm-subbuild/sqliteorm-populate-prefix/src/sqliteorm-populate-stamp/sqliteorm-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"sqliteorm-populate"
+		],
+		"name" : "sqliteorm-populate"
+	}
+}

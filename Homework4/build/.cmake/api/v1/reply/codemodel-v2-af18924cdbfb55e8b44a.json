@@ -1,0 +1,432 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						7
+					],
+					"hasInstallRule" : true,
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "dependencies",
+					"childIndexes" : 
+					[
+						2
+					],
+					"hasInstallRule" : true,
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "dependencies"
+				},
+				{
+					"build" : "dependencies/sqlite_orm",
+					"childIndexes" : 
+					[
+						3
+					],
+					"hasInstallRule" : true,
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "dependencies/sqlite_orm"
+				},
+				{
+					"build" : "_deps/sqliteorm-build",
+					"childIndexes" : 
+					[
+						4,
+						6
+					],
+					"hasInstallRule" : true,
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8.12"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 1,
+					"source" : "build/_deps/sqliteorm-src",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20,
+						21,
+						22,
+						23,
+						24,
+						25,
+						26,
+						27
+					]
+				},
+				{
+					"build" : "_deps/sqliteorm-build/dependencies",
+					"childIndexes" : 
+					[
+						5
+					],
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.14.0"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 1,
+					"source" : "build/_deps/sqliteorm-src/dependencies"
+				},
+				{
+					"build" : "_deps/sqliteorm-build/dependencies/sqlite3",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.14.0"
+					},
+					"parentIndex" : 4,
+					"projectIndex" : 1,
+					"source" : "build/_deps/sqliteorm-src/dependencies/sqlite3"
+				},
+				{
+					"build" : "_deps/sqliteorm-build/packaging",
+					"hasInstallRule" : true,
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8.12"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 1,
+					"source" : "build/_deps/sqliteorm-src/packaging"
+				},
+				{
+					"build" : "src",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "src",
+					"targetIndexes" : 
+					[
+						28
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2,
+						7
+					],
+					"name" : "wendex",
+					"targetIndexes" : 
+					[
+						28
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						3,
+						4,
+						5,
+						6
+					],
+					"name" : "sqlite_orm",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20,
+						21,
+						22,
+						23,
+						24,
+						25,
+						26,
+						27
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 3,
+					"id" : "Continuous::@349a5d4e0f3a512e427c",
+					"jsonFile" : "target-Continuous-Debug-206299fcefcfaeda890c.json",
+					"name" : "Continuous",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "ContinuousBuild::@349a5d4e0f3a512e427c",
+					"jsonFile" : "target-ContinuousBuild-Debug-630d9d73e3b8b50ebb9e.json",
+					"name" : "ContinuousBuild",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "ContinuousConfigure::@349a5d4e0f3a512e427c",
+					"jsonFile" : "target-ContinuousConfigure-Debug-596daccdc5c5cd17ff9f.json",
+					"name" : "ContinuousConfigure",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "ContinuousCoverage::@349a5d4e0f3a512e427c",
+					"jsonFile" : "target-ContinuousCoverage-Debug-ee0ee7a74665e1270a93.json",
+					"name" : "ContinuousCoverage",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "ContinuousMemCheck::@349a5d4e0f3a512e427c",
+					"jsonFile" : "target-ContinuousMemCheck-Debug-88dc7d012986840ee2b1.json",
+					"name" : "ContinuousMemCheck",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "ContinuousStart::@349a5d4e0f3a512e427c",
+					"jsonFile" : "target-ContinuousStart-Debug-2940907d45a0c252cf09.json",
+					"name" : "ContinuousStart",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "ContinuousSubmit::@349a5d4e0f3a512e427c",
+					"jsonFile" : "target-ContinuousSubmit-Debug-8923863767e5377f30a6.json",
+					"name" : "ContinuousSubmit",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "ContinuousTest::@349a5d4e0f3a512e427c",
+					"jsonFile" : "target-ContinuousTest-Debug-06a39adf0e9185c5a679.json",
+					"name" : "ContinuousTest",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "ContinuousUpdate::@349a5d4e0f3a512e427c",
+					"jsonFile" : "target-ContinuousUpdate-Debug-6e731de42f797dab67b1.json",
+					"name" : "ContinuousUpdate",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "Experimental::@349a5d4e0f3a512e427c",
+					"jsonFile" : "target-Experimental-Debug-3b3ab2dad5d03b5b3b59.json",
+					"name" : "Experimental",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "ExperimentalBuild::@349a5d4e0f3a512e427c",
+					"jsonFile" : "target-ExperimentalBuild-Debug-8a848508f700868c8cd5.json",
+					"name" : "ExperimentalBuild",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "ExperimentalConfigure::@349a5d4e0f3a512e427c",
+					"jsonFile" : "target-ExperimentalConfigure-Debug-f37657f7cef60f473052.json",
+					"name" : "ExperimentalConfigure",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "ExperimentalCoverage::@349a5d4e0f3a512e427c",
+					"jsonFile" : "target-ExperimentalCoverage-Debug-8b363b3fd7649614af17.json",
+					"name" : "ExperimentalCoverage",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "ExperimentalMemCheck::@349a5d4e0f3a512e427c",
+					"jsonFile" : "target-ExperimentalMemCheck-Debug-666e88550241030fa22b.json",
+					"name" : "ExperimentalMemCheck",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "ExperimentalStart::@349a5d4e0f3a512e427c",
+					"jsonFile" : "target-ExperimentalStart-Debug-c48fe21ef4e7a65438fd.json",
+					"name" : "ExperimentalStart",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "ExperimentalSubmit::@349a5d4e0f3a512e427c",
+					"jsonFile" : "target-ExperimentalSubmit-Debug-0f56ba5ec27a6478a039.json",
+					"name" : "ExperimentalSubmit",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "ExperimentalTest::@349a5d4e0f3a512e427c",
+					"jsonFile" : "target-ExperimentalTest-Debug-9a5f3e4b406aba40e5f8.json",
+					"name" : "ExperimentalTest",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "ExperimentalUpdate::@349a5d4e0f3a512e427c",
+					"jsonFile" : "target-ExperimentalUpdate-Debug-ced9104bb66f0cc69348.json",
+					"name" : "ExperimentalUpdate",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "Nightly::@349a5d4e0f3a512e427c",
+					"jsonFile" : "target-Nightly-Debug-e7134ab3dbd445bb26fe.json",
+					"name" : "Nightly",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "NightlyBuild::@349a5d4e0f3a512e427c",
+					"jsonFile" : "target-NightlyBuild-Debug-00959d7db96a38b2d5dd.json",
+					"name" : "NightlyBuild",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "NightlyConfigure::@349a5d4e0f3a512e427c",
+					"jsonFile" : "target-NightlyConfigure-Debug-2ee97db837753868ced0.json",
+					"name" : "NightlyConfigure",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "NightlyCoverage::@349a5d4e0f3a512e427c",
+					"jsonFile" : "target-NightlyCoverage-Debug-2d644ecda8edcc1da6c0.json",
+					"name" : "NightlyCoverage",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "NightlyMemCheck::@349a5d4e0f3a512e427c",
+					"jsonFile" : "target-NightlyMemCheck-Debug-21b8691284b140178c21.json",
+					"name" : "NightlyMemCheck",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "NightlyMemoryCheck::@349a5d4e0f3a512e427c",
+					"jsonFile" : "target-NightlyMemoryCheck-Debug-8a0dbbebdabc2250e126.json",
+					"name" : "NightlyMemoryCheck",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "NightlyStart::@349a5d4e0f3a512e427c",
+					"jsonFile" : "target-NightlyStart-Debug-cb8b5b70271cd7ea9f31.json",
+					"name" : "NightlyStart",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "NightlySubmit::@349a5d4e0f3a512e427c",
+					"jsonFile" : "target-NightlySubmit-Debug-91eba544c08f188eaf23.json",
+					"name" : "NightlySubmit",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "NightlyTest::@349a5d4e0f3a512e427c",
+					"jsonFile" : "target-NightlyTest-Debug-362a9b7b342eb69a27ed.json",
+					"name" : "NightlyTest",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "NightlyUpdate::@349a5d4e0f3a512e427c",
+					"jsonFile" : "target-NightlyUpdate-Debug-e4c1989bda0aa25ba283.json",
+					"name" : "NightlyUpdate",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "wendex::@145eef247bfb46b6828c",
+					"jsonFile" : "target-wendex-Debug-a4d89695ab45277cfc08.json",
+					"name" : "wendex",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "H:/repos/pss_hws/Homework4/build",
+		"source" : "H:/repos/pss_hws/Homework4"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 2
+	}
+}

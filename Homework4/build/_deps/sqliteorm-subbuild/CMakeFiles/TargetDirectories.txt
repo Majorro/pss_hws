@@ -1,0 +1,3 @@
+H:/repos/pss_hws/Homework4/build/_deps/sqliteorm-subbuild/CMakeFiles/edit_cache.dir
+H:/repos/pss_hws/Homework4/build/_deps/sqliteorm-subbuild/CMakeFiles/sqliteorm-populate.dir
+H:/repos/pss_hws/Homework4/build/_deps/sqliteorm-subbuild/CMakeFiles/rebuild_cache.dir

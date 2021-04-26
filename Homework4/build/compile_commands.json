@@ -1,0 +1,7 @@
+[
+{
+  "directory": "H:/repos/pss_hws/Homework4/build/src",
+  "command": "C:\\mingw-w64\\i686-8.1.0-posix-dwarf-rt_v6-rev0\\mingw32\\bin\\g++.exe  @CMakeFiles/wendex.dir/includes_CXX.rsp -g -std=c++17 -o CMakeFiles\\wendex.dir\\main.cpp.obj -c H:\\repos\\pss_hws\\Homework4\\src\\main.cpp",
+  "file": "H:/repos/pss_hws/Homework4/src/main.cpp"
+}
+]

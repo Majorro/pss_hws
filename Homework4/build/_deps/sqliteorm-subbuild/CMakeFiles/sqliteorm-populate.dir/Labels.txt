@@ -1,0 +1,14 @@
+# Target labels
+ sqliteorm-populate
+# Source files and their labels
+H:/repos/pss_hws/Homework4/build/_deps/sqliteorm-subbuild/CMakeFiles/sqliteorm-populate
+H:/repos/pss_hws/Homework4/build/_deps/sqliteorm-subbuild/CMakeFiles/sqliteorm-populate.rule
+H:/repos/pss_hws/Homework4/build/_deps/sqliteorm-subbuild/CMakeFiles/sqliteorm-populate-complete.rule
+H:/repos/pss_hws/Homework4/build/_deps/sqliteorm-subbuild/sqliteorm-populate-prefix/src/sqliteorm-populate-stamp/sqliteorm-populate-build.rule
+H:/repos/pss_hws/Homework4/build/_deps/sqliteorm-subbuild/sqliteorm-populate-prefix/src/sqliteorm-populate-stamp/sqliteorm-populate-configure.rule
+H:/repos/pss_hws/Homework4/build/_deps/sqliteorm-subbuild/sqliteorm-populate-prefix/src/sqliteorm-populate-stamp/sqliteorm-populate-download.rule
+H:/repos/pss_hws/Homework4/build/_deps/sqliteorm-subbuild/sqliteorm-populate-prefix/src/sqliteorm-populate-stamp/sqliteorm-populate-install.rule
+H:/repos/pss_hws/Homework4/build/_deps/sqliteorm-subbuild/sqliteorm-populate-prefix/src/sqliteorm-populate-stamp/sqliteorm-populate-mkdir.rule
+H:/repos/pss_hws/Homework4/build/_deps/sqliteorm-subbuild/sqliteorm-populate-prefix/src/sqliteorm-populate-stamp/sqliteorm-populate-patch.rule
+H:/repos/pss_hws/Homework4/build/_deps/sqliteorm-subbuild/sqliteorm-populate-prefix/src/sqliteorm-populate-stamp/sqliteorm-populate-test.rule
+H:/repos/pss_hws/Homework4/build/_deps/sqliteorm-subbuild/sqliteorm-populate-prefix/src/sqliteorm-populate-stamp/sqliteorm-populate-update.rule
